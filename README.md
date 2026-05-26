@@ -75,7 +75,7 @@ HayBTech.init("pk_test_your_public_key")
 ### 2. Start Checkout
 
 ```kotlin
-val paymentUrl = "https://api.haybtech.com/checkout/..." // From your backend
+val paymentUrl = "https://app.haybtech.com/checkout/..." // From your backend
 
 HayBTech.checkout(this, paymentUrl)
 ```
