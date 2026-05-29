@@ -9,6 +9,31 @@ Official Android SDK for the HayBTech Payment Gateway -- integrate mobile money 
 
 ---
 
+
+## Intégration par IA (Prompt pour Marchands)
+
+Si vous utilisez un assistant IA (comme Cursor, GitHub Copilot, ChatGPT, Claude, etc.), vous pouvez copier-coller le prompt suivant pour intégrer ce SDK de A à Z dans votre projet :
+
+```text
+Agis en tant qu'expert en développement Android natif. Je souhaite intégrer le SDK Android de HayBTech (`sn.haybtech:sdk`) dans mon application mobile pour gérer le parcours de paiement des clients de A à Z.
+
+Voici ma stack technique actuelle :
+- UI Framework : [ex: Jetpack Compose, XML Views]
+- Concurrency / Réseau : [ex: Kotlin Coroutines, Retrofit]
+
+*Note de sécurité : L'initiation de paiement doit se faire côté serveur. Le SDK Android sert à afficher le flux de paiement de manière sécurisée et à intercepter le résultat.*
+
+Tâches à accomplir dans le code généré :
+1. **Initiation réseau** : Créer le code réseau Retrofit pour appeler mon backend et récupérer la `payment_url`.
+2. **Composant UI de paiement** : Créer un composant (Jetpack Compose ou Activity avec Custom Tab/WebView) pour afficher de manière optimale l'interface de paiement HayBTech.
+3. **Gestion du cycle de vie et retour** : Gérer proprement la navigation lors des redirections de succès ou d'annulation. Gérer les Deep Links (`monapp://haybtech-callback`) pour revenir à l'application.
+4. **Vérification finale** : Écrire la fonction de synchronisation avec mon serveur backend pour récupérer le statut validé par webhook avant de confirmer visuellement l'achat à l'utilisateur.
+
+Génère du code Kotlin propre, moderne, commenté et prêt à l'intégration.
+```
+
+---
+
 ## SECURITY WARNING
 
 **NEVER use your Secret Key (`sk_...`) in an Android app.**
@@ -168,6 +193,5 @@ Add internet permission in `AndroidManifest.xml` (usually already present):
 | Kotlin      | 1.8+    |
 | Gradle      | 7.0+    |
 
----
-
 MIT License
+
